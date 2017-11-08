@@ -6,6 +6,14 @@ public class Product {
 	String product_name;
     int quantity;
     double price;
+    public Product() {
+		// TODO Auto-generated constructor stub
+	}
+	@Override
+	public String toString() {
+		return "Product [product_id=" + product_id + ", product_name=" + product_name + ", quantity=" + quantity
+				+ ", price=" + price + "]\n";
+	}
 	public Product(int product_id, String product_name, int quantity, double price) {
 		super();
 		this.product_id = product_id;

@@ -33,6 +33,7 @@ public class Customer {
 	}
 	
 	public void addCustomer() {
+		DBConnectionUtil.getConnection();
 		
 	}
 	public void bookProduct(Product obj) {
