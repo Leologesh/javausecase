@@ -39,7 +39,7 @@ public class Invoice {
   public String toString() {
     return "Invoice [invoiceId=" + invoiceId + ", productId=" 
         + productId + ", productName=" + productName
-        + ", quantity=" + quantity + ", productPrice=" + productPrice + ", total=" + total + "]";
+        + ", quantity=" + quantity + ", productPrice=" + productPrice + ", total=" + total + "]\n";
   }
 
   public int getQuantity() {

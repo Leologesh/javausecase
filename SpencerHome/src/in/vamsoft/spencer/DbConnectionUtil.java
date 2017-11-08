@@ -19,7 +19,7 @@ public class DbConnectionUtil {
   public static Logger logger = Logger.getLogger(DbConnectionUtil.class);
 
   /**
-   * @return .
+   * @return for establishing Database Connection.
    */
   public static Connection getConnection() {
 
@@ -57,7 +57,7 @@ public class DbConnectionUtil {
   }
 
   /**
-   * @param conn .
+   * @param conn For closing Database Connection.
    */
   public static void closeConnection(Connection conn) {
     try {

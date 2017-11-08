@@ -26,8 +26,8 @@ public class CustomerDaoImpl {
   }
 
   /**
-   * @param e .
-   * @return .
+   * @param e customer details as object for adding customer.
+   * @return true if customer added else false
    */
   public boolean addCustomer(Customer e) {
 
@@ -45,7 +45,7 @@ public class CustomerDaoImpl {
   }
 
   /**
-   * @return .
+   * @return returns the lastcustomer id from customer table.
    */
   public int getLastCustomerId() {
     try (PreparedStatement preparedStatement = connection.prepareStatement(""
@@ -65,8 +65,8 @@ public class CustomerDaoImpl {
   }
 
   /**
-   * @param customerId .
-   * @return .
+   * @param customerId for getting customerId.
+   * @return whether the given customerId is available in the table
    */
   public boolean checkCustomerId(int customerId) {
 
@@ -86,8 +86,8 @@ public class CustomerDaoImpl {
   }
 
   /**
-   * @param custId .
-   * @return .
+   * @param custId for getting customer id.
+   * @return returns all booked products.
    */
   public List<Invoice> getAllBookedProducts(int custId) {
 

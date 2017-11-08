@@ -18,10 +18,10 @@ public class Product {
   }
 
   /**
-   * @param productId .
-   * @param productName .
-   * @param quantity .
-   * @param price .
+   * @param productId for setting productId.
+   * @param productName for setting productName.
+   * @param quantity for setting productQuantity.
+   * @param price for setting price.
    */
   public Product(int productId, String productName, int quantity, double price) {
     super();

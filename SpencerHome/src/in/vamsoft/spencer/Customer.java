@@ -9,9 +9,9 @@ public class Customer {
   }
 
   /**
-   * @param custId .
-   * @param name .
-   * @param contactNo .
+   * @param custId For getting customerId.
+   * @param name For getting customerName
+   * @param contactNo For getting customerContactNumber
    */
   public Customer(int custId, String name, int contactNo) {
     super();
