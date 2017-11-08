@@ -1,68 +1,88 @@
 package in.vamsoft.spencer;
 
+import in.vamsoft.dao.CustomerDaoImpl;
+import in.vamsoft.dao.ProductDao;
+
 import java.sql.Connection;
+
 import java.util.List;
 
-import in.vamsoft.dao.CustomerDAOImpl;
-import in.vamsoft.dao.ProductDAO;
+public class RetailStore {
 
-public class RetailStore{
+  String storeName;
+  public static int custId = 0;
+  public static int pId = 0;
+  Connection connection = null;
+  CustomerDaoImpl impl = new CustomerDaoImpl();
+  ProductDao productDao = new ProductDao();
 
-	String storeName;
-	public static int custId=0;
-	public static int pId=0;
-	Connection connection=null;
-	CustomerDAOImpl impl=new CustomerDAOImpl();
-	ProductDAO productDAO = new ProductDAO();
-	public RetailStore(String name) {
-		this.storeName=name;
-	}
-	public String getStoreName() {
-		return storeName;
-	}
-	public void setStoreName(String storeName) {
-		this.storeName = storeName;
-	}
-	public void addCustomer(String name,int contact) {
-		System.out.println(impl.getLastCustomerId());
-		custId=impl.getLastCustomerId()+1;
-		Customer c=new Customer(custId,name,contact);
-		impl.addCustomer(c);
-		System.out.println("customer added");
-		
-	}
-	public void addProduct(String pName,double price,int quantity) {
-		pId=productDAO.getLastProductId()+1;
-		Product p = new Product(pId,pName,quantity,price);
-		productDAO.addProduct(p);
-		System.out.println("product added");
-		
-		
-	}
-	public int checkProductAvailability(String productName) {
-		System.out.println(productDAO.checkProductAvailability(productName));
-		return productDAO.checkProductAvailability(productName);
-		
-	}
-	public List<Product> getAllProducts(){
-		System.out.println(productDAO.getAllProducts());
-		  return productDAO.getAllProducts();
-	}
-	
-	public double calculateNetAmount(int customerID,double discount) {
-		return discount;
-		
-	}
-	public boolean bookProduct(String pname, int quantity, int customerid) {
-		System.out.println("RetailStore.bookproduct()");
-		
-		//System.out.println(productDAO.bookproduct(pname, quantity, customerid));
-		return (productDAO.bookproduct(pname, quantity, customerid));
-	}
-	
-	public void getAllBookedProducts(int custId){
-		System.out.println((impl.getAllBookedProducts(custId)));
-	}
-	
-		
+  public RetailStore(String name) {
+    this.storeName = name;
+  }
+
+  public String getStoreName() {
+    return storeName;
+  }
+
+  public void setStoreName(String storeName) {
+    this.storeName = storeName;
+  }
+
+  /**
+   * @param name .
+   * @param contact .
+   */
+  public void addCustomer(String name, int contact) {
+    System.out.println(impl.getLastCustomerId());
+    custId = impl.getLastCustomerId() + 1;
+    Customer c = new Customer(custId, name, contact);
+    impl.addCustomer(c);
+    System.out.println("customer added");
+
+  }
+
+  /**
+   * @param pname .
+   * @param price .
+   * @param quantity .
+   */
+  public void addProduct(String pname, double price, int quantity) {
+    pId = productDao.getLastProductId() + 1;
+    Product p = new Product(pId, pname, quantity, price);
+    productDao.addProduct(p);
+    System.out.println("product added");
+
+  }
+
+  /**
+   * @param productName .
+   * @return .
+   */
+  public int checkProductAvailability(String productName) {
+    System.out.println(productDao.checkProductAvailability(productName));
+    return productDao.checkProductAvailability(productName);
+
+  }
+
+  public List<Product> getAllProducts() {
+    System.out.println(productDao.getAllProducts());
+    return productDao.getAllProducts();
+  }
+
+  /**
+   * @param pname .
+   * @param quantity .
+   * @param customerid .
+   * @return .
+   */
+  public boolean bookProduct(String pname, int quantity, int customerid) {
+    System.out.println("RetailStore.bookproduct()");
+
+    return (productDao.bookproduct(pname, quantity, customerid));
+  }
+
+  public void getAllBookedProducts(int custId) {
+    System.out.println((impl.getAllBookedProducts(custId)));
+  }
+
 }

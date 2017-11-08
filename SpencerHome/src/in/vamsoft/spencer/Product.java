@@ -1,51 +1,66 @@
 package in.vamsoft.spencer;
 
 public class Product {
-	
-	int product_id;
-	String product_name;
-    int quantity;
-    double price;
-    public Product() {
-		// TODO Auto-generated constructor stub
-	}
-	@Override
-	public String toString() {
-		return "Product [product_id=" + product_id + ", product_name=" + product_name + ", quantity=" + quantity
-				+ ", price=" + price + "]\n";
-	}
-	public Product(int product_id, String product_name, int quantity, double price) {
-		super();
-		this.product_id = product_id;
-		this.product_name = product_name;
-		this.quantity = quantity;
-		this.price = price;
-	}
-	public int getProduct_id() {
-		return product_id;
-	}
-	public void setProduct_id(int product_id) {
-		this.product_id = product_id;
-	}
-	public String getProduct_name() {
-		return product_name;
-	}
-	public void setProduct_name(String product_name) {
-		this.product_name = product_name;
-	}
-	public int getQuantity() {
-		return quantity;
-	}
-	public void setQuantity(int quantity) {
-		this.quantity = quantity;
-	}
-	public double getPrice() {
-		return price;
-	}
-	public void setPrice(double price) {
-		this.price = price;
-	}
-    
-    
+
+  int productId;
+  String productName;
+  int quantity;
+  double price;
+
+  public Product() {
+
+  }
+
+  @Override
+  public String toString() {
+    return "Product [product_id=" + productId + ", product_name=" + productName + ", "
+        + "quantity=" + quantity + ", price=" + price + "]\n";
+  }
+
+  /**
+   * @param productId .
+   * @param productName .
+   * @param quantity .
+   * @param price .
+   */
+  public Product(int productId, String productName, int quantity, double price) {
+    super();
+    this.productId = productId;
+    this.productName = productName;
+    this.quantity = quantity;
+    this.price = price;
+  }
+
+  public int getProduct_id() {
+    return productId;
+  }
+
+  public void setProduct_id(int productId) {
+    this.productId = productId;
+  }
+
+  public String getProduct_name() {
+    return productName;
+  }
+
+  public void setProduct_name(String productName) {
+    this.productName = productName;
+  }
+
+  public int getQuantity() {
+    return quantity;
+  }
+
+  public void setQuantity(int quantity) {
+    this.quantity = quantity;
+  }
+
+  public double getPrice() {
+    return price;
+  }
+
+  public void setPrice(double price) {
+    this.price = price;
+  }
 
 }

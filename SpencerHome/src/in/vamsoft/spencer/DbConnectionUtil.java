@@ -10,10 +10,17 @@ import java.util.Properties;
 
 import org.apache.log4j.Logger;
 
-public class DBConnectionUtil {
+/**
+ * @author vamsoft .
+ *
+ */
+public class DbConnectionUtil {
 
-  public static Logger logger = Logger.getLogger(DBConnectionUtil.class);
+  public static Logger logger = Logger.getLogger(DbConnectionUtil.class);
 
+  /**
+   * @return .
+   */
   public static Connection getConnection() {
 
     String driver = null;
@@ -32,26 +39,31 @@ public class DBConnectionUtil {
 
       Class.forName(driver);
       con = DriverManager.getConnection(url, uname, password);
-          } catch (FileNotFoundException e) {
-      
+    } catch (FileNotFoundException e) {
+      e.printStackTrace();
+
     } catch (ClassNotFoundException e) {
-      
+
       e.printStackTrace();
     } catch (SQLException e) {
-      
+
       e.printStackTrace();
     } catch (IOException e) {
-     
+
       e.printStackTrace();
     }
     return con;
 
   }
+
+  /**
+   * @param conn .
+   */
   public static void closeConnection(Connection conn) {
     try {
       conn.close();
     } catch (SQLException e) {
-      
+
       e.printStackTrace();
     }
   }
